@@ -1,4 +1,6 @@
 using LivroCaixaAPI.Src.Contextos;
+using LivroCaixaAPI.Src.Repositorios;
+using LivroCaixaAPI.Src.Repositorios.Implementacoes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +30,8 @@ namespace LivroCaixaAPI
         {
             // Configuração de Banco de dados
             services.AddDbContext<LivroCaixaContexto>(opt => opt.UseSqlServer(Configuration["ConnectionStringsDev:DefaultConnection"]));
+            // Repositorios
+            services.AddScoped<IUsuario, UsuarioRepositorio>();
             // Controladores
             services.AddControllers();
         }
