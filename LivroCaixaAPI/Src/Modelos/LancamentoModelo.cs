@@ -20,6 +20,7 @@ namespace LivroCaixaAPI.Src.Modelos
         public DateTime Date { get; set;  }
         public string Titulo { get; set; }
         public string Descricao { get; set; }
+        public double Valor { get; set; }
         public enum TipoLancamento
         {
             Receita,
